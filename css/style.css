@@ -1,0 +1,144 @@
+:root {
+  --main-color: #000;
+  --second-color: #fff;
+  --transparent-color: rgba(44, 175, 15, 0.7);
+  --section-padding: 50px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  font-family: "Open Sans", "sans-serif";
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-inline: auto;
+}
+
+/*small*/
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/*medium*/
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/*large*/
+@media (min-width: 1200px) {
+  .container {
+    width: 1370px;
+  }
+}
+
+/* =========== start header ================= */
+
+header {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 10px;
+  background-color: var(--main-color);
+  color: var(--second-color);
+}
+header .logo {
+  padding-left: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+header ul {
+  margin-right: 40px;
+}
+header ul li {
+  display: inline-block;
+}
+header ul li:not(:last-child) {
+  padding-right: 20px;
+}
+
+/* =========== end header ================= */
+
+/* =========== start slider ================= */
+
+.slider .img-container {
+  position: relative;
+}
+.slider .img-container i {
+  position: absolute;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.slider .img-container i:first-child {
+  left: 6%;
+}
+.slider .img-container i:last-child {
+  left: 94%;
+}
+.slider .img-container img {
+  width: 100%;
+}
+
+/* =========== end slider ================= */
+
+/* =========== start category ================= */
+.category {
+  background-color: rgba(7, 67, 119, 0.847);
+  color: #fff;
+}
+.category .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.category .container .box {
+  width: 50px;
+  padding-block: 10px;
+  margin: 10px;
+}
+.category .container .box img {
+  height: 50px;
+  border-radius: 50%;
+  max-width: 100%;
+}
+.category .container .box p {
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+}
+/* =========== end category ================= */
+
+/* =========== start products ================= */
+
+/* =========== end products ================= */
+
+.products {
+}
+.container{}
+.filter {
+}
