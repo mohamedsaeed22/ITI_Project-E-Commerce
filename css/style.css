@@ -3,6 +3,7 @@
   --second-color: #fff;
   --transparent-color: rgba(44, 175, 15, 0.7);
   --section-padding: 50px;
+  --section-background: #f6f6f6;
 }
 
 * {
@@ -15,9 +16,8 @@
 html {
   scroll-behavior: auto;
 }
-
 body {
-  font-family: "Open Sans", "sans-serif";
+  font-family: "Poppins", sans-serif;
 }
 
 ul {
@@ -48,7 +48,7 @@ a {
 /*large*/
 @media (min-width: 1200px) {
   .container {
-    width: 1370px;
+    width: 1170px;
   }
 }
 
@@ -97,17 +97,17 @@ header ul li:not(:last-child) {
   left: 6%;
 }
 .slider .img-container i:last-child {
-  left: 94%;
+  right: 6%;
 }
 .slider .img-container img {
   width: 100%;
 }
 
-/* =========== end slider ================= */
+/* =========== end slider ===================== */
 
 /* =========== start category ================= */
 .category {
-  background-color: rgba(7, 67, 119, 0.847);
+  background-color: #074377d8;
   color: #fff;
 }
 .category .container {
@@ -135,10 +135,123 @@ header ul li:not(:last-child) {
 
 /* =========== start products ================= */
 
-/* =========== end products ================= */
-
 .products {
+  padding-block: var(--section-padding);
+  background-color: var(--section-background);
 }
-.container{}
+
 .filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
+
+.filter span {
+  background-color: #ddd;
+  border-radius: 4px;
+  padding: 10px 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.filter span.active {
+  background-color: #074377d8;
+  color: white;
+}
+
+.container .cards {
+  /* background-color: red; */
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.container .cards .card {
+  color: #404553;
+  width: 200px;
+  background-color: #e4dbdb5e;
+  padding: 12px;
+}
+
+.container .cards .card .img-wrapper img {
+  max-width: 100%;
+}
+
+.container .cards .card .title {
+  font-size: 12px;
+  padding-block: 8px;
+  font-weight: 500;
+}
+.container .cards .card .price span:first-child {
+  font-size: 12px;
+}
+.container .cards .card .price span:last-child {
+  font-weight: bold;
+  color: #000;
+}
+.container .cards .card .addToCart {
+  margin-top: 10px;
+  display: block;
+  background-color: rgb(0, 0, 0);
+  padding: 8px 10px;
+  cursor: pointer;
+}
+.container .cards .card .addToCart i {
+  color: #fff;
+  font-size: 22px;
+  text-align: center;
+  display: block;
+}
+
+/* =============start markting ================= */
+.marketing {
+  padding-block: var(--section-padding);
+}
+.marketing .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(194, 127, 127);
+  height: 100vh;
+}
+.left-box {
+  width: 45%;
+}
+.right-box {
+  width: 45%;
+  height: 100%; 
+  overflow: hidden;
+}
+
+.bottom-box {
+}
+.info {
+}
+.title {
+}
+.fa-solid {
+}
+.fa-chevron-down {
+}
+.right-box .img-box {
+  background-color: red;
+  max-height: 100%;
+}
+.right-box .img-box img {
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+}
+.img-box {
+}
+.icons {
+}
+.fa-star {
+}
+.fa-regular {
+}
+
+/* ============= end markting ================= */
