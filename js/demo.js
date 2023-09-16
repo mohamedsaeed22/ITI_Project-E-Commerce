@@ -1,5 +1,4 @@
-// ============ slider ============================
-
+// ======================== start slider ============================
 var imgs = [
   "../imgs/slider/slider1.webp",
   "../imgs/slider/slider2.webp",
@@ -43,3 +42,18 @@ function onStop() {
 }
 
 onPlay();
+
+// ==================== start floating span ==========================
+document.getElementById("up-span").addEventListener("click", () => {
+  document.documentElement.scrollTop = 0;
+});
+
+// ==================== start category ==========================
+var product_container = document.getElementById("product-container");
+for (let index = 1; index <= 12; index++) {
+  product_container.innerHTML += `
+  <div class="box">
+  <img src="./imgs/category/${index}.png" alt="category image" />
+</div>
+  `;
+}

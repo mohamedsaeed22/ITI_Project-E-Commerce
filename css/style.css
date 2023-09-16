@@ -14,7 +14,7 @@
   margin: 0;
 }
 html {
-  scroll-behavior: auto;
+  scroll-behavior: smooth;
 }
 body {
   font-family: "Poppins", sans-serif;
@@ -103,41 +103,57 @@ header ul li:not(:last-child) {
   width: 100%;
 }
 
+#up-span{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fef133;
+  z-index: 10000;
+  cursor: pointer;
+  >i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    line-height: 20px;
+    text-align: center;
+    
+
+    color: #000;
+    font-size: 20px;
+  }
+}
 /* =========== end slider ===================== */
 
 /* =========== start category ================= */
 .category {
-  background-color: #074377d8;
-  color: #fff;
+  padding-block: 20px
 }
 .category .container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 20px;
 }
 .category .container .box {
-  width: 50px;
-  padding-block: 10px;
-  margin: 10px;
+  width: 75px;
 }
 .category .container .box img {
-  height: 50px;
-  border-radius: 50%;
   max-width: 100%;
 }
-.category .container .box p {
-  text-align: center;
-  font-size: 10px;
-  font-weight: bold;
-}
+
 /* =========== end category ================= */
 
 /* =========== start products ================= */
 
 .products {
   padding-block: var(--section-padding);
-  background-color: var(--section-background);
+  /* background-color: var(--section-background); */
+  background-color: #f7f7fa;
 }
 
 .filter {
@@ -171,7 +187,7 @@ header ul li:not(:last-child) {
 }
 .container .cards .card {
   color: #404553;
-  width: 200px;
+  width: 177px;
   background-color: #e4dbdb5e;
   padding: 12px;
 }
@@ -206,7 +222,7 @@ header ul li:not(:last-child) {
   display: block;
 }
 
-/* =============start markting ================= */
+/* ============= start markting ================= */
 .marketing {
   padding-block: var(--section-padding);
 }
@@ -214,44 +230,138 @@ header ul li:not(:last-child) {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgb(194, 127, 127);
-  height: 100vh;
+  min-height: 100vh;
+  padding-right: 0;
 }
 .left-box {
   width: 45%;
 }
+.left-box h1 {
+  font-size: 40px;
+  padding-bottom: 20px;
+}
+.left-box p {
+  color: #4d6377;
+  margin-bottom: 20px;
+}
 .right-box {
   width: 45%;
-  height: 100%; 
-  overflow: hidden;
+  height: 90vh;
 }
-
-.bottom-box {
-}
-.info {
-}
-.title {
-}
-.fa-solid {
-}
-.fa-chevron-down {
-}
-.right-box .img-box {
-  background-color: red;
-  max-height: 100%;
-}
-.right-box .img-box img {
-  max-width: 100%;
+.right-box img {
   display: block;
   margin-left: auto;
+  max-width: 100%;
+  height: 100%;
 }
-.img-box {
+.bottom-box {
+  background-color: #1c5177;
+  color: #fff;
+  display: flex;
+  padding: 15px;
+  align-items: center;
+  justify-content: space-around;
+  > img {
+    width: 120px;
+    height: 90px;
+    padding-right: 20px;
+  }
+  .info p {
+    color: #fff;
+    font-size: 14px;
+    margin-block: 10px;
+  }
+  .title {
+    display: flex;
+    justify-content: space-between;
+  }
+  .title i {
+    font-size: 20px;
+  }
+  .icons i:not(:last-child) {
+    color: #ffdd59;
+  }
 }
-.icons {
-}
-.fa-star {
-}
-.fa-regular {
+@media (max-width: 768px) {
+  .marketing .container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+  }
+  .left-box h1 {
+    font-size: 30px;
+  }
+  .left-box h1,
+  .left-box p {
+    text-align: center;
+  }
+  .bottom-box p {
+    text-align: left;
+  }
+  .left-box,
+  .right-box {
+    width: 100%;
+  }
+  .right-box img {
+    margin-inline: auto;
+  }
 }
 
 /* ============= end markting ================= */
+
+/* ============= start footer ================= */
+footer {
+  padding-block: var(--section-padding);
+  position: relative;
+  background-color: #f7f7fa;
+  color: #000;
+}
+footer .container .row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+footer .col p {
+  text-transform: capitalize;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+footer ul li {
+  padding-bottom: 10px;
+  font-size: 14px;
+}
+footer a:hover {
+  color: #bbb;
+}
+footer .buttom-footer {
+  width: fit-content;
+  text-align: center;
+  .icons ul {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .icons ul li {
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: 100%;
+    height: 50px;
+    background-color: #fef133;
+    border-radius: 50%;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  .icons ul li i {
+    margin-top: 10px;
+    color: #666a75;
+    font-size: 25px;
+  }
+}
+/* ============= end footer ================= */
