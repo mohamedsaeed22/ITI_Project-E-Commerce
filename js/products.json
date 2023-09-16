@@ -1,0 +1,198 @@
+[
+  {
+    "id": 1,
+    "image": "../imgs/phone/phone1.webp",
+    "title": "Galaxy A14 Dual Sim Black 4GB RAM 64GB 4G - Middle East Version",
+    "price": 3500.0,
+    "category": "phone"
+  },
+  {
+    "id": 2,
+    "image": "../imgs/phone/phone2.webp",
+    "title": "iPhone 12 Pro Max 256GB - Pacific Blue",
+    "price": 5899.0,
+    "category": "phone"
+  },
+  {
+    "id": 3,
+    "image": "../imgs/phone/phone3.webp",
+    "title": "Samsung Galaxy S21 Ultra 5G 256GB - Phantom Black",
+    "price": 4999.0,
+    "category": "phone"
+  },
+  {
+    "id": 4,
+    "image": "../imgs/phone/phone4.webp",
+    "title": "Google Pixel 5 128GB - Sorta Sage",
+    "price": 3599.0,
+    "category": "phone"
+  },
+  {
+    "id": 5,
+    "image": "../imgs/phone/phone5.webp",
+    "title": "OnePlus 9 Pro 256GB - Morning Mist",
+    "price": 4499.0,
+    "category": "phone"
+  },
+  {
+    "id": 6,
+    "image": "../imgs/phone/phone6.webp",
+    "title": "Xiaomi Mi 11 128GB - Cosmic Black",
+    "price": 2999.0,
+    "category": "phone"
+  },
+  {
+    "id": 7,
+    "image": "../imgs/phone/phone7.webp",
+    "title": "Sony Xperia 1 III 256GB - Frosted Black",
+    "price": 5499.0,
+    "category": "phone"
+  },
+  {
+    "id": 8,
+    "image": "../imgs/makeup/1.webp",
+    "title": "Huda Beauty Rose Gold Remastered Eyeshadow Palette",
+    "price": 150.0,
+    "category": "makeup"
+  },
+  {
+    "id": 9,
+    "image": "../imgs/makeup/2.webp",
+    "title": "Fenty Beauty Pro Filt'r Soft Matte Longwear Foundation",
+    "price": 45.0,
+    "category": "makeup"
+  },
+  {
+    "id": 10,
+    "image": "../imgs/makeup/3.webp",
+    "title": "Anastasia Beverly Hills Amrezy Highlighter",
+    "price": 28.0,
+    "category": "makeup"
+  },
+  {
+    "id": 11,
+    "image": "../imgs/makeup/4.webp",
+    "title": "MAC Ruby Woo Matte Lipstick",
+    "price": 20.0,
+    "category": "makeup"
+  },
+  {
+    "id": 12,
+    "image": "../imgs/makeup/5.webp",
+    "title": "Tarte Shape Tape Concealer",
+    "price": 27.0,
+    "category": "makeup"
+  },
+  {
+    "id": 13,
+    "image": "../imgs/makeup/6.webp",
+    "title": "Too Faced Better Than Sex Mascara",
+    "price": 25.0,
+    "category": "makeup"
+  },
+  {
+    "id": 14,
+    "image": "../imgs/makeup/7.webp",
+    "title": "NARS Radiant Creamy Concealer",
+    "price": 30.0,
+    "category": "makeup"
+  },
+  {
+    "id": 15,
+    "image": "../imgs/sneaker/1.webp",
+    "title": "Nike Air Max 270",
+    "price": 120.0,
+    "category": "sneaker"
+  },
+  {
+    "id": 16,
+    "image": "../imgs/sneaker/2.webp",
+    "title": "Adidas Ultraboost",
+    "price": 150.0,
+    "category": "sneaker"
+  },
+  {
+    "id": 17,
+    "image": "../imgs/sneaker/3.webp",
+    "title": "Puma RS-X",
+    "price": 100.0,
+    "category": "sneaker"
+  },
+  {
+    "id": 18,
+    "image": "../imgs/sneaker/4.webp",
+    "title": "Converse Chuck Taylor All Star",
+    "price": 60.0,
+    "category": "sneaker"
+  },
+  {
+    "id": 19,
+    "image": "../imgs/sneaker/5.webp",
+    "title": "New Balance 990",
+    "price": 180.0,
+    "category": "sneaker"
+  },
+  {
+    "id": 20,
+    "image": "../imgs/sneaker/6.webp",
+    "title": "Vans Old Skool",
+    "price": 70.0,
+    "category": "sneaker"
+  },
+  {
+    "id": 21,
+    "image": "../imgs/sneaker/7.webp",
+    "title": "Reebok Classic Leather",
+    "price": 80.0,
+    "category": "sneaker"
+  },
+  {
+    "id": 22,
+    "image": "../imgs/laptop/1.webp",
+    "title": "Dell XPS 13",
+    "price": 1299.0,
+    "category": "laptop"
+  },
+  {
+    "id": 23,
+    "image": "../imgs/laptop/2.webp",
+    "title": "MacBook Pro 13-inch M1 Chip 8-core CPU 8-core GPU 8GB RAM 256GB SSD",
+    "price": 1499.0,
+    "category": "laptop"
+  },
+  {
+    "id": 24,
+    "image": "../imgs/laptop/3.webp",
+    "title": "HP Spectre x360",
+    "price": 1099.0,
+    "category": "laptop"
+  },
+  {
+    "id": 25,
+    "image": "../imgs/laptop/4.webp",
+    "title": "Lenovo ThinkPad X1 Carbon",
+    "price": 1199.0,
+    "category": "laptop"
+  },
+  {
+    "id": 26,
+    "image": "../imgs/laptop/5.webp",
+    "title": "Asus ZenBook 14",
+    "price": 999.0,
+    "category": "laptop"
+  },
+  {
+    "id": 27,
+    "image": "../imgs/laptop/6.webp",
+    "title": "Acer Predator Helios 300",
+    "price": 1299.0,
+    "category": "laptop"
+  },
+  {
+    "id": 28,
+    "image": "../imgs/laptop/7.webp",
+    "title": "Microsoft Surface Laptop 4",
+    "price": 1299.0,
+    "category": "laptop"
+  }
+]

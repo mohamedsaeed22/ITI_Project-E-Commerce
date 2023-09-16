@@ -1,7 +1,6 @@
 :root {
   --main-color: #000;
   --second-color: #fff;
-  --transparent-color: rgba(44, 175, 15, 0.7);
   --section-padding: 50px;
   --section-background: #f6f6f6;
 }
@@ -55,13 +54,17 @@ a {
 /* =========== start header ================= */
 
 header {
+  position: fixed;
+  top: 0;
+  left: 0;z-index: 10;
+  width: 100%;
   height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-inline: 10px;
-  background-color: var(--main-color);
-  color: var(--second-color);
+  background-color: #fef130;
+  color: #000;
 }
 header .logo {
   padding-left: 10px;
@@ -77,6 +80,56 @@ header ul li {
 header ul li:not(:last-child) {
   padding-right: 20px;
 }
+/* ======= cart ============  */
+header .cart {
+  padding-right: 15px;
+  cursor: pointer;
+}
+header .cart i {
+  position: relative;
+  font-size: 25px;
+}
+header .cart i::after {
+  content: "7";
+  color: #fff;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: black;
+  left: 18px;
+  top: -18px;
+}
+.cart-container{
+  display: none;
+  position: fixed;
+  inset: 0;
+  width: 90%;
+  height: 90%;
+  background-color: #ddd;
+  z-index: 100;
+  margin: auto;
+  
+}
+.cart-container i{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  color: #fef130;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  right: -13px;
+  top: -17px;
+  font-size: 25px;
+  cursor: pointer;
+}
 
 /* =========== end header ================= */
 
@@ -84,6 +137,7 @@ header ul li:not(:last-child) {
 
 .slider .img-container {
   position: relative;
+  margin-top: 70px;
 }
 .slider .img-container i {
   position: absolute;
@@ -102,8 +156,10 @@ header ul li:not(:last-child) {
 .slider .img-container img {
   width: 100%;
 }
+/* =========== end slider ===================== */
 
-#up-span{
+/* =========== start up span ===================== */
+#up-span {
   position: fixed;
   right: 20px;
   bottom: 20px;
@@ -111,9 +167,9 @@ header ul li:not(:last-child) {
   height: 40px;
   border-radius: 50%;
   background-color: #fef133;
-  z-index: 10000;
+  z-index: 10;
   cursor: pointer;
-  >i{
+  > i {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -121,16 +177,15 @@ header ul li:not(:last-child) {
     line-height: 20px;
     text-align: center;
     
-
     color: #000;
     font-size: 20px;
   }
 }
-/* =========== end slider ===================== */
+/* =========== end up span ===================== */
 
 /* =========== start category ================= */
 .category {
-  padding-block: 20px
+  padding-block: 20px;
 }
 .category .container {
   display: flex;
@@ -155,7 +210,6 @@ header ul li:not(:last-child) {
   /* background-color: var(--section-background); */
   background-color: #f7f7fa;
 }
-
 .filter {
   display: flex;
   align-items: center;
@@ -163,7 +217,6 @@ header ul li:not(:last-child) {
   gap: 10px;
   flex-wrap: wrap;
 }
-
 .filter span {
   background-color: #ddd;
   border-radius: 4px;
@@ -175,9 +228,7 @@ header ul li:not(:last-child) {
   background-color: #074377d8;
   color: white;
 }
-
 .container .cards {
-  /* background-color: red; */
   padding-top: 20px;
   display: flex;
   align-items: center;
@@ -188,35 +239,37 @@ header ul li:not(:last-child) {
 .container .cards .card {
   color: #404553;
   width: 177px;
-  background-color: #e4dbdb5e;
+  height: 380px;
   padding: 12px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
 }
-
 .container .cards .card .img-wrapper img {
   max-width: 100%;
 }
-
 .container .cards .card .title {
   font-size: 12px;
   padding-block: 8px;
   font-weight: 500;
+  height: 72px;
 }
 .container .cards .card .price span:first-child {
   font-size: 12px;
+}
+.container .cards .card .price {
+  margin-bottom: 10px;
 }
 .container .cards .card .price span:last-child {
   font-weight: bold;
   color: #000;
 }
 .container .cards .card .addToCart {
-  margin-top: 10px;
   display: block;
   background-color: rgb(0, 0, 0);
   padding: 8px 10px;
   cursor: pointer;
 }
 .container .cards .card .addToCart i {
-  color: #fff;
+  color: #fef133;
   font-size: 22px;
   text-align: center;
   display: block;
