@@ -91,30 +91,71 @@ function getProductsByCategory(category) {
 }
 
 var cardsContainer = document.getElementById("cards-container");
+function createProductCard(product) {
+  const card = document.createElement("div");
+  card.classList.add("card");
+
+  const imageWrapper = document.createElement("div");
+  imageWrapper.classList.add("img-wrapper");
+
+  const img = document.createElement("img");
+  img.src = product.image;
+  img.alt = "product-image";
+  img.setAttribute("loading", "lazy");
+
+  const content = document.createElement("div");
+  content.classList.add("content");
+
+  const title = document.createElement("p");
+  title.classList.add("title");
+  title.textContent = product.title;
+
+  const price = document.createElement("p");
+  price.classList.add("price");
+  price.innerHTML = `<span>EGP</span><span>${product.price}</span>`;
+
+  const addToCart = document.createElement("span");
+  addToCart.classList.add("addToCart");
+
+  const cartIcon = document.createElement("i");
+  cartIcon.classList.add("fa-solid", "fa-cart-plus");
+  cartIcon.addEventListener("click", () => {
+    addToCartFun(product);
+  });
+
+  addToCart.appendChild(cartIcon);
+
+  content.appendChild(title);
+  content.appendChild(price);
+  content.appendChild(addToCart);
+
+  imageWrapper.appendChild(img);
+  imageWrapper.appendChild(content);
+
+  card.appendChild(imageWrapper);
+
+  return card;
+}
+
 function renderProducts(products) {
   cardsContainer.innerHTML = "";
   products.forEach((product) => {
-    cardsContainer.innerHTML += `
-    <div class="card">
-    <div class="img-wrapper">
-      <img src="${product.image}" alt="product-image" loading="lazy" />
-      <div class="content">
-        <p class="title">
-         ${product.title}
-        </p>
-        <p class="price">
-          <span>EGP</span>
-          <span>${product.price}</span>
-        </p>
-        <span class="addToCart"
-          ><i class="fa-solid fa-cart-plus"></i
-        ></span>
-      </div>
-    </div>
-  </div>
-    `;
+    const productCard = createProductCard(product);
+    cardsContainer.appendChild(productCard);
   });
 }
+const cartIcon = document.querySelector("header .cart i");
+function updateCartCount(count) {
+  cartIcon.setAttribute("data-count", count);
+}
+
+var cartProducts = [];
+function addToCartFun(productId) {
+  cartProducts.push(productId);
+  updateCartCount(cartProducts.length);
+  console.log(cartProducts);
+}
+updateCartCount(cartProducts.length);
 
 var filters = document.querySelectorAll(".filter span");
 filters.forEach((el) => {
@@ -144,9 +185,93 @@ function filterCards(el) {
 // ================== cart click =================
 var cart = document.getElementById("cart");
 var cart_container = document.getElementById("cart-container");
+var cart_items = document.getElementById("cart-item");
 cart.addEventListener("click", () => {
   cart_container.style.display = "block";
+  cart_items.innerHTML = "";
+  cartProducts.forEach((product) => {
+    const productCart = createCartItem(product);
+    cart_items.appendChild(productCart);
+    // cart_items.innerHTML = `
+    // <div class="card">
+    // <div class="img-wrapper">
+    //   <img
+    //     src="${product.image}"
+    //     alt="product-image"
+    //     loading="lazy"
+    //   />
+    // </div>
+    // <div class="content">
+    //   <p class="title">
+    //     ${product.title}
+    //   </p>
+    //   <p class="price">
+    //     <span>EGP</span>
+    //     <span>${product.price}</span>
+    //   </p>
+    //   <div class="total">
+    //     <span><i class="fa-solid fa-plus"></i></span>
+    //     <span>1</span>
+    //     <span><i class="fa-solid fa-minus"></i></span>
+    //   </div>
+    // </div>
+    // <div class="removeFromCart">
+    //   <i class="fa-solid fa-trash"></i>
+    // </div>
+    // </div>
+    // `;
+  });
 });
+
+function createCartItem(product) {
+  const cardDiv = document.createElement("div");
+  cardDiv.classList.add("card");
+
+  const imgWrapperDiv = document.createElement("div");
+  imgWrapperDiv.classList.add("img-wrapper");
+
+  const imgElement = document.createElement("img");
+  imgElement.src = product.image;
+  imgElement.alt = "product-image";
+  imgElement.setAttribute("loading", "lazy");
+
+  imgWrapperDiv.appendChild(imgElement);
+
+  const contentDiv = document.createElement("div");
+  contentDiv.classList.add("content");
+
+  const titleP = document.createElement("p");
+  titleP.classList.add("title");
+  titleP.textContent = product.title;
+
+  const priceP = document.createElement("p");
+  priceP.classList.add("price");
+  priceP.innerHTML = `<span>EGP</span><span>${product.price}</span>`;
+
+  const totalDiv = document.createElement("div");
+  totalDiv.classList.add("total");
+  totalDiv.innerHTML = `
+    <span><i class="fa-solid fa-plus"></i></span>
+    <span>1</span>
+    <span><i class="fa-solid fa-minus"></i></span>
+  `;
+
+  const removeFromCartDiv = document.createElement("div");
+  removeFromCartDiv.classList.add("removeFromCart");
+  removeFromCartDiv.innerHTML = '<i class="fa-solid fa-trash"></i>';
+  removeFromCartDiv.addEventListener("click", ()=>{
+    console.log(product.id);
+  })
+  contentDiv.appendChild(titleP);
+  contentDiv.appendChild(priceP);
+  contentDiv.appendChild(totalDiv);
+
+  cardDiv.appendChild(imgWrapperDiv);
+  cardDiv.appendChild(contentDiv);
+  cardDiv.appendChild(removeFromCartDiv);
+
+  return cardDiv;
+}
 
 var closeCart = document.getElementById("close-cart");
 closeCart.addEventListener("click", () => {

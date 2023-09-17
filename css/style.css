@@ -56,7 +56,8 @@ a {
 header {
   position: fixed;
   top: 0;
-  left: 0;z-index: 10;
+  left: 0;
+  z-index: 10;
   width: 100%;
   height: 70px;
   display: flex;
@@ -80,7 +81,7 @@ header ul li {
 header ul li:not(:last-child) {
   padding-right: 20px;
 }
-/* ======= cart ============  */
+/* ==================== start cart ============  */
 header .cart {
   padding-right: 15px;
   cursor: pointer;
@@ -90,7 +91,7 @@ header .cart i {
   font-size: 25px;
 }
 header .cart i::after {
-  content: "7";
+  content: attr(data-count);
   color: #fff;
   font-size: 12px;
   display: flex;
@@ -104,7 +105,8 @@ header .cart i::after {
   left: 18px;
   top: -18px;
 }
-.cart-container{
+
+.cart-container {
   display: none;
   position: fixed;
   inset: 0;
@@ -113,10 +115,11 @@ header .cart i::after {
   background-color: #ddd;
   z-index: 100;
   margin: auto;
-  
+  overflow-y: scroll;
+  overflow-x: none;
 }
-.cart-container i{
-  position: absolute;
+.cart-container > i {
+  position: sticky;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -124,12 +127,66 @@ header .cart i::after {
   color: #fef130;
   width: 30px;
   height: 30px;
-  border-radius: 50%;
-  right: -13px;
-  top: -17px;
+  top: 0;
+  left: 0;
   font-size: 25px;
   cursor: pointer;
 }
+.cart-container .card-list {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  margin-top: 40px;
+  flex-direction: column;
+}
+
+.card-list .cart-item .card {
+  margin-bottom: 10px;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  .content {
+    padding-left: 10px;
+  }
+  .content .title {
+    font-weight: 400;
+    max-width: 80%;
+    margin-bottom: 10px;
+  }
+  .content .price span:nth-child(2) {
+    font-weight: bold;
+  }
+  .content .price {
+    margin-bottom: 12px;
+  }
+  .content .total span:nth-child(odd) {
+    padding: 4px 6px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  .content .total span:nth-child(even) {
+    margin-inline: 8px;
+  }
+  .removeFromCart {
+    margin-left: auto;
+    margin-right: 20px;
+  }
+  .removeFromCart i {
+    font-size: 22px;
+    color: red;
+    cursor: pointer;
+  }
+}
+
+.card-list .cart-item .card .img-wrapper {
+  width: 100px;
+}
+.card-list .cart-item .card img {
+  max-width: 100%;
+}
+
+/* ====end cart ============  */
 
 /* =========== end header ================= */
 
@@ -176,7 +233,7 @@ header .cart i::after {
     margin-top: 10px;
     line-height: 20px;
     text-align: center;
-    
+
     color: #000;
     font-size: 20px;
   }
