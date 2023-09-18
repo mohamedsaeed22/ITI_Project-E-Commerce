@@ -140,6 +140,47 @@ header .cart i::after {
   flex-direction: column;
 }
 
+.empty-cart {
+  display: block;
+  text-align: center;
+  width: 200px;
+  margin: auto;
+  margin-top: 10%;
+  > img {
+    max-width: 100%;
+  }
+  > p {
+    color: #1c5177;
+  }
+}
+.checkout {
+  background-color: #fef130;
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 53%;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px;
+  .box {
+    border: 1px solid #000;
+    padding: 8px;
+  }
+  .box:first-child span:first-child {
+    font-weight: bold;
+  }
+  .box:first-child span:last-child {
+    margin-left: 5px;
+    color: #4d6377;
+  }
+  .box:last-child span {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}
 .card-list .cart-item .card {
   margin-bottom: 10px;
   background-color: #eee;
