@@ -70,16 +70,36 @@ header {
 header .logo {
   padding-left: 10px;
   font-weight: bold;
+  width: 50px;
   font-size: 20px;
+}
+header .logo img {
+  max-width: 100%;
 }
 header ul {
   margin-right: 40px;
 }
 header ul li {
   display: inline-block;
+  position: relative;
+}
+header ul li:hover {
+  opacity: .5;
 }
 header ul li:not(:last-child) {
   padding-right: 20px;
+}
+@media (max-width: 768px){
+  header ul {
+    margin-right: 0;
+  }
+  header ul li {
+    padding-right: 15px;
+    font-size: 14px;
+  }
+  header ul li:not(:last-child) {
+    padding-right: 8px;
+  }
 }
 /* ==================== start cart ============  */
 header .cart {
@@ -180,6 +200,9 @@ header .cart i::after {
     margin-left: 10px;
     cursor: pointer;
   }
+}
+.card-list .cart-item {
+  margin-bottom: 100px;
 }
 .card-list .cart-item .card {
   margin-bottom: 10px;
@@ -372,7 +395,15 @@ header .cart i::after {
   text-align: center;
   display: block;
 }
-
+@media (max-width: 768px){
+  .container .cards .card {
+  width: 150px;
+  height: 340px;
+  } 
+  .container .cards {
+    gap: 8px;
+  }
+}
 /* ============= start markting ================= */
 .marketing {
   padding-block: var(--section-padding);

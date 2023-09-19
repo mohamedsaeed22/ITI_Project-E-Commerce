@@ -196,11 +196,6 @@ var empty_cart = document.getElementById("empty-cart");
 var checkout = document.getElementById("checkout");
 var totalPrice = document.getElementById("totalPrice");
 
-var tot = 0;
-function showTotalPrice(product) {
-  tot += product.price;
-  totalPrice.innerHTML = tot;
-}
 
 cart.addEventListener("click", () => {
   cart_container.style.display = "block";
@@ -221,17 +216,17 @@ function hideEmptyCart() {
 }
 
 function renderProductsCart(productsArray) {
-  tot = 0;
   cart_items.innerHTML = "";
   productsArray.forEach((product) => {
     const productCart = createCartItem(product);
     cart_items.appendChild(productCart);
+    calculateTotalPrice()
   });
   hideEmptyCart();
 }
 
 function createCartItem(product) {
-  showTotalPrice(product);
+  product.count = 1;
   const cardDiv = document.createElement("div");
   cardDiv.classList.add("card");
 
@@ -252,33 +247,38 @@ function createCartItem(product) {
   titleP.classList.add("title");
   titleP.textContent = product.title;
 
-  const priceP = document.createElement("p");
+  var priceP = document.createElement("p");
   priceP.classList.add("price");
-  priceP.innerHTML = `<span>EGP</span><span>${product.price}</span>`;
+  var span_egp = document.createElement("span");
+  span_egp.textContent = "EGP";
+  var span_price = document.createElement("span");
+  span_price.textContent = product.price;
+  priceP.append(span_egp, span_price);
 
   const totalDiv = document.createElement("div");
   totalDiv.classList.add("total");
   const span1 = document.createElement("span");
   const span2 = document.createElement("span");
   const span3 = document.createElement("span");
-  var count = 1;
-  span1.textContent = count;
+
+  span1.textContent = product.count;
   span2.innerHTML = '<i class="fa-solid fa-plus"></i>';
   span3.innerHTML = '<i class="fa-solid fa-minus"></i>';
 
   span2.addEventListener("click", () => {
-    console.log("inc");
-    count++;
-    span1.textContent = count;
-    calculateTotal(product.price * count);
+    span1.textContent = ++product.count;
+    span_price.innerHTML = product.price * product.count;
+    calculateTotalPrice();
   });
+
   span3.addEventListener("click", () => {
-    if (count > 1) {
-      count--;
-      span1.textContent = count;
-      calculateTotal(product.price * count);
+    if (product.count > 1) {
+      span1.textContent = --product.count;
+      span_price.innerHTML = product.price * product.count;
+      calculateTotalPrice();
     }
   });
+
   totalDiv.append(span2, span1, span3);
 
   const removeFromCartDiv = document.createElement("div");
@@ -305,6 +305,13 @@ function createCartItem(product) {
   return cardDiv;
 }
 
+function calculateTotalPrice() {
+  var total = 0;
+  cartProducts.forEach((product) => {
+    total += product.price * product.count;
+  });
+  totalPrice.innerHTML = total;
+}
 var closeCart = document.getElementById("close-cart");
 closeCart.addEventListener("click", () => {
   tot = 0;
