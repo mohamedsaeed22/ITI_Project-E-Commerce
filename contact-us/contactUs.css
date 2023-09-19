@@ -142,12 +142,12 @@ header ul li:not(:last-child) {
 .left-box {
   width: 45%;
 }
-.left-box h1 {
+.left-box > h1 {
   margin-top: 40px;
   font-size: 40px;
   padding-bottom: 20px;
 }
-.left-box p {
+.left-box > p {
   color: #4d6377;
   margin-bottom: 20px;
 }
@@ -167,8 +167,59 @@ header ul li:not(:last-child) {
   bottom: 30%;
   transform: translateX(-50%);
   width: 80%;
-  background-color: red;
-  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.float-box .col {
+  padding: 25px 15px;
+  width: calc(100% / 3);
+  color: #f6f6f6d4;
+  background-color: #1c5177;
+}
+.float-box .col:not(:first-child) {
+  background-color: #ffdd59;
+  color: #000;
+}
+.float-box .col > p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+.float-box .row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.float-box .row .info {
+  padding-left: 8px;
+}
+.float-box .row p {
+  font-size: 12px;
+}
+.float-box .row h2 {
+  font-size: 14px;
+}
+.float-box .row i {
+  display: inline;
+  font-size: 20px;
+  border: 1px solid #f6f6f6;
+  border-radius: 50%;
+  padding: 6px;
+}
+.float-box .col:not(:first-child) i{
+  border: 1px solid #000;
+ 
+}
+.row .info {
+}
+.float-box {
+}
+.fa-regular {
+}
+.fa-envelope {
+}
+.info {
 }
 
 @media (max-width: 768px) {
