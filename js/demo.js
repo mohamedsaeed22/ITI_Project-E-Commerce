@@ -46,6 +46,8 @@ onPlay();
 // ==================== floating span ==========================
 document.getElementById("up-span").addEventListener("click", () => {
   document.documentElement.scrollTop = 0;
+  // window.scrollTo({ top: 0, behavior: 'smooth' });
+
 });
 
 // ====================  category section ==========================
