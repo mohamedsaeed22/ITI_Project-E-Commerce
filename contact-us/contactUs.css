@@ -83,6 +83,12 @@ header ul li {
   display: inline-block;
   position: relative;
 }
+header ul li:nth-child(3) {
+  opacity: 0.5;
+}
+header ul li:hover {
+  opacity: 0.5;
+}
 header ul li:hover {
   opacity: 0.5;
 }

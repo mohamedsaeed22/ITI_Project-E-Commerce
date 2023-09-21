@@ -269,14 +269,14 @@ function createCartItem(product) {
 
   span2.addEventListener("click", () => {
     span1.textContent = ++product.count;
-    span_price.innerHTML = product.price * product.count;
+    // span_price.innerHTML = product.price * product.count;
     calculateTotalPrice();
   });
 
   span3.addEventListener("click", () => {
     if (product.count > 1) {
       span1.textContent = --product.count;
-      span_price.innerHTML = product.price * product.count;
+      // span_price.innerHTML = product.price * product.count;
       calculateTotalPrice();
     }
   });

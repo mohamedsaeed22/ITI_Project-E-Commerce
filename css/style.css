@@ -83,6 +83,12 @@ header ul li {
   display: inline-block;
   position: relative;
 }
+header ul li:nth-child(1) {
+  opacity: 0.5;
+}
+header ul li:hover {
+  opacity: 0.5;
+}
 header ul li:hover {
   opacity: .5;
 }
@@ -170,7 +176,7 @@ header .cart i::after {
     max-width: 100%;
   }
   > p {
-    color: #1c5177;
+    color: #000;
   }
 }
 .checkout {
