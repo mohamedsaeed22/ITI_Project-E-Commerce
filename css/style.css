@@ -1,6 +1,7 @@
 :root {
-  --main-color: #000;
-  --second-color: #fff;
+  --main-color: #fef130;
+  --hover-color: #2c5f8b;
+  --text-color: #000;
   --section-padding: 50px;
   --section-background: #f6f6f6;
 }
@@ -18,7 +19,6 @@ html {
 body {
   font-family: "Poppins", sans-serif;
 }
-
 ul {
   list-style: none;
 }
@@ -64,14 +64,11 @@ header {
   align-items: center;
   justify-content: space-between;
   padding-inline: 10px;
-  background-color: #fef130;
-  color: #000;
+  background-color: var(--main-color);
 }
 header .logo {
   padding-left: 10px;
-  font-weight: bold;
   width: 50px;
-  font-size: 20px;
 }
 header .logo img {
   max-width: 100%;
@@ -84,18 +81,15 @@ header ul li {
   position: relative;
 }
 header ul li:nth-child(1) {
-  opacity: 0.5;
+  color: var(--hover-color);
 }
 header ul li:hover {
-  opacity: 0.5;
-}
-header ul li:hover {
-  opacity: .5;
+  color: var(--hover-color);
 }
 header ul li:not(:last-child) {
   padding-right: 20px;
 }
-@media (max-width: 768px){
+@media (max-width: 768px) {
   header ul {
     margin-right: 0;
   }
@@ -106,6 +100,17 @@ header ul li:not(:last-child) {
   header ul li:not(:last-child) {
     padding-right: 8px;
   }
+}
+#info-message {
+  transition: all .3s ease-in-out;
+  position: absolute;
+  right: -400px;
+  transform: translateX(-50%);
+  top: 80px;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 8px;
+  background-color: var(--hover-color);
 }
 /* ==================== start cart ============  */
 header .cart {
@@ -165,7 +170,6 @@ header .cart i::after {
   margin-top: 40px;
   flex-direction: column;
 }
-
 .empty-cart {
   display: block;
   text-align: center;
@@ -396,6 +400,7 @@ header .cart i::after {
 .container .cards .card .price span:last-child {
   font-weight: bold;
   color: #000;
+  margin-left: 5px;
 }
 .container .cards .card .addToCart {
   display: block;
@@ -409,11 +414,11 @@ header .cart i::after {
   text-align: center;
   display: block;
 }
-@media (max-width: 768px){
+@media (max-width: 768px) {
   .container .cards .card {
-  width: 150px;
-  height: 340px;
-  } 
+    width: 150px;
+    height: 340px;
+  }
   .container .cards {
     gap: 8px;
   }

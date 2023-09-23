@@ -52,10 +52,7 @@ form.addEventListener("input", (e) => {
 });
 
 submit.addEventListener("click", (e) => {
-  if (flagName && flagEmail && flagPhone) {
-    e.target.style.cursor = "no-allowed";
-    console.log("good");
-  } else {
+  if (!(flagName && flagEmail && flagPhone)) {
     e.preventDefault();
   }
 });

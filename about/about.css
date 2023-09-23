@@ -230,7 +230,7 @@ header .cart i::after {
   position: relative;
   min-height: 380px;
   .txt-container{
-    margin-top: 50px;
+    margin-top: 40px;
   }
 }
 .vibe-container .vibe:nth-child(2)::before {
