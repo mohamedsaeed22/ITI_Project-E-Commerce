@@ -256,6 +256,14 @@ header .cart i::after {
   max-width: 100%;
 }
 
+@media (max-width: 768px) {
+  .cart-container .card-list {
+    width: 95%;
+  }
+  .checkout {
+    width: 80%;
+  }
+}
 /* ====end cart ============  */
 
 /* =========== end header ================= */
