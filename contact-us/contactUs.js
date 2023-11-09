@@ -18,6 +18,7 @@ email.addEventListener("input", (e) => {
   const emailRegex = /\w+@\w+\.com$/gi;
   flagEmail = validateInput(emailValue, emailRegex, 2);
 });
+
 phone.addEventListener("input", (e) => {
   var phoneValue = phone.value;
   const phoneRegex = /^(010|011|012|015)\d{8}$/;
